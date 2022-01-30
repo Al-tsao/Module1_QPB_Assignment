@@ -9,8 +9,15 @@ df = pd.read_csv("PakWheelsDataSet.csv")
 # print(df)
 
 #number summary
-print(df.describe())
+# print(df.describe())
 
 #export hnumber summary to excel
-df.describe().to_excel("output.xlsx")
+# df.describe().to_excel("output.xlsx")
 
+#Capacity(CC)
+df.sort_values('Engine Capacity(CC)')
+
+sns.set()
+g = sns.histplot(x = 'Engine Capacity(CC)', data = df, bins = 30)
+g.ticklabel_format(style='plain')
+plt.show()
